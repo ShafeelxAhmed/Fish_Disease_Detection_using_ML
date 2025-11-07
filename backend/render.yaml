@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fish-disease-backend
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "uvicorn backend.app:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
+    disk:
+      name: model-storage
+      mountPath: /opt/render/project/src
+      sizeGB: 2
