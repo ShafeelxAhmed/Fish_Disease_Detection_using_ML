@@ -31,6 +31,10 @@ if not os.path.exists(MODEL_PATH):
             f.write(chunk)
     print("✅ Model downloaded!")
 
+
+print("Looking for model at:", MODEL_PATH)
+print("Exists locally?:", os.path.exists(MODEL_PATH))
+
 print("Loading model...")
 model = tf.keras.models.load_model(MODEL_PATH)
 print("✅ Model loaded!")
