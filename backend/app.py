@@ -3,8 +3,18 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import os, requests
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 IMG_SIZE = 256  
 
