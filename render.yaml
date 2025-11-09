@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fish-disease-backend
+    env: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: model-storage
+      mountPath: /app
+      sizeGB: 2
